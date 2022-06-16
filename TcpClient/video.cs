@@ -48,5 +48,10 @@ namespace TcpClient
         {
 
         }
+
+        private void btnExit_video_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -22,7 +22,9 @@ namespace TcpClient
         private System.Net.Sockets.TcpClient Client;
         private bool Connected = false;
         public static bool PassTCP { get; set; }
+
         public static System.Net.Sockets.TcpClient PassClient { get; set; }
+        
 
         private NetworkStream stream;
         private StreamReader Reader;
@@ -57,6 +59,8 @@ namespace TcpClient
             cmbBoardRate.Items.Add("57600");
             cmbBoardRate.Items.Add("115200");
             cmbBoardRate.SelectedIndex = 0;
+            
+            //connect.Location = new Point();
 
             if (comPort != null)
             {
@@ -70,7 +74,6 @@ namespace TcpClient
                 }
             }
 
-
             if (Connected)
             {
                 btnTcpConnect.Text = "Close";
@@ -82,10 +85,10 @@ namespace TcpClient
 
         }
 
-
         /*
          * 시리얼 포트 연결
          */
+
         private void btnSerial_Click(object sender, EventArgs e)
         {
             if (btnSerial.Text == "Connect")
@@ -109,9 +112,11 @@ namespace TcpClient
                 btnSerial.Text = "Connect";
             }
         }
+
         /*
          * TCP/IP 서버 연결
          */
+
         private void btnTcpConnect_Click(object sender, EventArgs e)
         {
             try
@@ -126,9 +131,6 @@ namespace TcpClient
                     stream = Client.GetStream();
                     Reader = new StreamReader(stream);
                     
-
-
-
                     btnTcpConnect.Text = "Close";
                 }
                 else
@@ -151,6 +153,4 @@ namespace TcpClient
 
         }
     }
-
-
 }

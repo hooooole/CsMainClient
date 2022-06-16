@@ -245,7 +245,7 @@
             this.lblTmp.AutoSize = true;
             this.lblTmp.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTmp.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblTmp.Location = new System.Drawing.Point(43, 170);
+            this.lblTmp.Location = new System.Drawing.Point(55, 172);
             this.lblTmp.Name = "lblTmp";
             this.lblTmp.Size = new System.Drawing.Size(30, 25);
             this.lblTmp.TabIndex = 3;
@@ -257,7 +257,7 @@
             this.lblHmd.AutoSize = true;
             this.lblHmd.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHmd.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblHmd.Location = new System.Drawing.Point(52, 171);
+            this.lblHmd.Location = new System.Drawing.Point(53, 173);
             this.lblHmd.Name = "lblHmd";
             this.lblHmd.Size = new System.Drawing.Size(30, 25);
             this.lblHmd.TabIndex = 4;
@@ -278,7 +278,7 @@
             this.lblSoil.AutoSize = true;
             this.lblSoil.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSoil.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblSoil.Location = new System.Drawing.Point(53, 171);
+            this.lblSoil.Location = new System.Drawing.Point(53, 173);
             this.lblSoil.Name = "lblSoil";
             this.lblSoil.Size = new System.Drawing.Size(30, 25);
             this.lblSoil.TabIndex = 6;
@@ -289,7 +289,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(94, 175);
+            this.label10.Location = new System.Drawing.Point(92, 175);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(34, 18);
             this.label10.TabIndex = 7;
@@ -310,7 +310,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(86, 177);
+            this.label12.Location = new System.Drawing.Point(86, 176);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(33, 18);
             this.label12.TabIndex = 9;
