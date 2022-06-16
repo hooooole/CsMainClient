@@ -120,9 +120,6 @@
   <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>134, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -358,7 +355,7 @@
   <data name="btnExit.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADMAAAAwCAYAAAC8NUKEAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAABmdJREFUaEPtmctLVV8Ux+1hT7OwyCxsJBRB5SQpmpUjHSRBBI0aOQwnTsSBUBE0
+        DgAACw4BQL7hQQAABmdJREFUaEPtmctLVV8Ux+1hT7OwyCxsJBRB5SQpmpUjHSRBBI0aOQwnTsSBUBE0
         qLCSHlIkGA2aRn9AiI7VoKEQSFT0Ms2s3D8+i76H1fbce87t3kB++IXFPvec/fh+91p77X3OrQr/I6yI
         Wa5YEbNckSnm58+fVi4uLibXMX78+GHPQVo9PQMLCwsF+wHUpb9fv37Z7+/fv1s5Pz9vJeDa9ynk8gwN
         ISHMzs6GL1++2DXEMAgwsEgA6njiIsA91YWYn4wY1NMzSsYWaOeRS4xvBAE/sCcPIBrf+/btWypZP0FA
@@ -2029,7 +2026,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
-        0QAADdEBwivf4wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEjeSURBVHhe7d0L
+        0AAADdABEGw9BwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEjeSURBVHhe7d0L
         3GZjvTfwOR/JOMw4NLaYERpRDJMtGTYqp+zNrrzsVC/pYJcXqb0rhKi2rXLaDiEVlXkdQmoTXtOQakdp
         JEVoEiLns6H39zfXNNes+T3zHO611vW/1vX7fT7fz8fn75n7/q/rvta6nue+77XWsL/+9a8i0nHISHgH
         nAAXwc3waGD/bTX7f/YzI9ljiEi30KKIdAMyGf4N7gUrDIT9rP2byewxRaQbaFFE8occCs9BvLgPhv3b

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +17,10 @@ namespace TcpClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Form1 mainForm = new Form1();
+            mainForm.StartPosition = FormStartPosition.Manual;
+            mainForm.Location = new Point(500, 100);
+            Application.Run(mainForm);
         }
     }
 }
