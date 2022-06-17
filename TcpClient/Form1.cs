@@ -21,22 +21,19 @@ namespace TcpClient
     {
         public static Form1 FormDialog;
 
-
         /*TCP 서버
          */
+
         private int LocalPort = 13000;
         private static string HostName = Dns.GetHostName();
         private string strIPaddress = Dns.GetHostEntry(HostName).AddressList[1].ToString();
 
-
-
         private TcpServer Server;
-
-
 
         /*
          * TCP 클라이언트
          */
+
         private bool tcpConnect = false;
         public static bool PassTCP { get; set; }
 
@@ -57,8 +54,6 @@ namespace TcpClient
 
         SerialPort comPort = null;
         public static SerialPort PassSerial { get; set; }
-
-
         private string dataTemp;
         private string dataHumi;
         private string dataSoilHumi;
@@ -74,13 +69,15 @@ namespace TcpClient
             /*
              * 폼이 켜질 때 NodeMCU 서버 on
              */
+
+            lblDate.Text = DateTime.Now.ToString("yyyy-MM-dd ddd");
+
             IPHostEntry HostDNSEntry = System.Net.Dns.GetHostEntry(HostName);
             IPAddress[] allIPsOfThisHost = null;
             IPAddress ipv4Ret = null;
             allIPsOfThisHost = HostDNSEntry.AddressList;
 
-            for (int idx = allIPsOfThisHost.Length - 1; idx > 0; idx--)
-            {
+            for (int idx = allIPsOfThisHost.Length - 1; idx > 0; idx--) {
                 //if an IPV4 address is found, return the address
                 if (allIPsOfThisHost[idx].AddressFamily == AddressFamily.InterNetwork)
                 {
@@ -96,10 +93,6 @@ namespace TcpClient
             Server.Start();
             timer1.Enabled = true;
             timer1.Start();
-            
-           
-
-
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -136,14 +129,11 @@ namespace TcpClient
             connectFrom.BringToFront();
             connectFrom.ShowDialog();
 
-
-
-
             /*
-             *  시리얼이 연결 됬을 때
+             *  시리얼 연결 됐을 때
              */
-            if (connect.PassSerial != null)
-            {
+
+            if (connect.PassSerial != null) {
                 if (connect.PassSerial.IsOpen)
                 {
                     comPort = connect.PassSerial;
@@ -151,16 +141,12 @@ namespace TcpClient
                     comPort.DataReceived += new SerialDataReceivedEventHandler(DataReceved);
                     lblSerial.Text = "On";
                 }
-
-            }
-            else
-            {
+            } else {
                 lblSerial.Text = "Off";
             }
 
-
             /**
-             *  TCP 연결 됬을 때
+             *  TCP 연결 됐을 때
              */
 
             tcpConnect = connect.PassTCP;
@@ -170,13 +156,10 @@ namespace TcpClient
                 Writer = connect.PassWriter;
                 lblServer.Text = "On";
                 PassTCP = true;
-            }
-            else
-            {
+            } else {
                 lblServer.Text = "Off";
                 PassTCP = false;
             }
-
         }
 
         private void DataReceved(object sender, SerialDataReceivedEventArgs e)
@@ -185,32 +168,31 @@ namespace TcpClient
             this.BeginInvoke(new setTextDelegate(SerailReceved), new object[] { rxd });
         }
 
-
         private void SerailReceved(string inString)
         {
             string Head = inString.Substring(0, 1);
             string Data = inString.Substring(1);
 
-            if (Head == "@")
-            {
+            if (Head == "@") {
                 string[] PasingData = Data.Split(',');
                 dataTemp = PasingData[0];
                 dataHumi = PasingData[1];
                 lblTmp.Text = dataTemp;
                 lblHmd.Text = dataHumi;
 
-                if (tcpConnect)
-                {
+                if (tcpConnect) {
                     SendToServer();
                 }
             }
         }
+
         private void SendToServer()
         {
             string msg = "@"+ dataTemp + "," + dataHumi + "," + dataSoilHumi;
             Writer.WriteLine(msg);
             Writer.Flush();
         }
+
         private void btnState_Click(object sender, EventArgs e)
         {
             Form videoform = new video();
@@ -222,7 +204,7 @@ namespace TcpClient
 
         private void btnDiagnostic_Click(object sender, EventArgs e)
         {
-            // After Complete to Deep Learning
+            
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -254,13 +236,15 @@ namespace TcpClient
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            /* SoilHmd Test
+             
             ArrayList ClientStatus = Server.ClientStatus;
             foreach (object obj in ClientStatus)
             {
                 string status = obj.ToString();
                 textBox1.Text = status.Split(',')[0];
             }
-
+            */
         }
     }
 }

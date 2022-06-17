@@ -61,9 +61,9 @@
             // 
             // btnExit_connect
             // 
-            this.btnExit_connect.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnExit_connect.BackColor = System.Drawing.Color.Cornsilk;
             resources.ApplyResources(this.btnExit_connect, "btnExit_connect");
-            this.btnExit_connect.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnExit_connect.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnExit_connect.Name = "btnExit_connect";
             this.btnExit_connect.UseVisualStyleBackColor = false;
             this.btnExit_connect.Click += new System.EventHandler(this.btnExit_connect_Click);
@@ -83,7 +83,7 @@
             // 
             // btnTcpConnect
             // 
-            this.btnTcpConnect.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnTcpConnect.BackColor = System.Drawing.Color.SeaGreen;
             resources.ApplyResources(this.btnTcpConnect, "btnTcpConnect");
             this.btnTcpConnect.ForeColor = System.Drawing.Color.AliceBlue;
             this.btnTcpConnect.Name = "btnTcpConnect";

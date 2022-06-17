@@ -27,11 +27,12 @@ namespace TcpClient
 
         private delegate void setTextDelegate(string getStrig);
 
-
         /*
          * 시리얼 포트 객체
          */
+        
         SerialPort comPort = null;
+
         public static SerialPort PassSerial { get; set; }
 
         public connect()
@@ -43,7 +44,6 @@ namespace TcpClient
         {
             Connected = Form1.PassTCP;
             comPort = Form1.PassSerial;
-
 
             cmbSerialPort.Items.Clear();
             var portName = System.IO.Ports.SerialPort.GetPortNames();
@@ -57,7 +57,6 @@ namespace TcpClient
             cmbBoardRate.Items.Add("115200");
             cmbBoardRate.SelectedIndex = 0;
             
-
             if (comPort != null)
             {
                 if (comPort.IsOpen)
@@ -132,6 +131,8 @@ namespace TcpClient
                     txtIPaddress.Enabled = false;
                     txtLocalPort.Enabled = false;
                     btnTcpConnect.Text = "Close";
+                    txtIPaddress.ReadOnly = true;
+                    txtLocalPort.ReadOnly = true;
                 }
                 else
                 {
@@ -139,6 +140,8 @@ namespace TcpClient
                     if (Client != null) Client.Close();
                     if (PassWriter != null) PassWriter.Close();
                     btnTcpConnect.Text = "Connect";
+                    txtIPaddress.ReadOnly = false;
+                    txtLocalPort.ReadOnly = false;
                 }
             }
             catch (SocketException ex)
