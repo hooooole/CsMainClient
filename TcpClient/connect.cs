@@ -47,6 +47,7 @@ namespace TcpClient
         private void connect_Load(object sender, EventArgs e)
         {
             Connected = Form1.PassTCP;
+
             
             /*
             connect.StartPosition = FormStartPosition.Manual;
@@ -80,12 +81,9 @@ namespace TcpClient
                 }
             }
 
-            if (Connected)
-            {
+            if (Connected) {
                 btnTcpConnect.Text = "Close";
-            }
-            else
-            {
+            } else {
                 btnTcpConnect.Text = "Connect";
             }
         }
