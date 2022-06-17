@@ -21,21 +21,22 @@ namespace TcpClient
 
         private System.Net.Sockets.TcpClient Client;
         private bool Connected = false;
+
         public static bool PassTCP { get; set; }
 
         public static System.Net.Sockets.TcpClient PassClient { get; set; }
         
-
         private NetworkStream stream;
         private StreamReader Reader;
 
         private delegate void setTextDelegate(string getStrig);
 
-
         /*
          * 시리얼 포트 객체
          */
+
         SerialPort comPort = null;
+
         public static SerialPort PassSerial { get; set; }
 
         public connect()
@@ -95,26 +96,7 @@ namespace TcpClient
 
         private void btnSerial_Click(object sender, EventArgs e)
         {
-            if (btnSerial.Text == "Connect")
-            {
-                comPort = new SerialPort();
-                comPort.PortName = cmbSerialPort.Text;
-                comPort.BaudRate = Convert.ToInt32(cmbBoardRate.Text);
-                comPort.DataBits = 8;
-                comPort.Parity = Parity.None;
-                comPort.StopBits = StopBits.One;
-                comPort.Handshake = Handshake.None;
-                comPort.Open();
-                comPort.DiscardInBuffer();
-                PassSerial = comPort;
-                btnSerial.Text = "Close";
-            }
-            else
-            {
-                PassSerial = null;
-                comPort.Close();
-                btnSerial.Text = "Connect";
-            }
+
         }
 
         /*
@@ -160,15 +142,6 @@ namespace TcpClient
         private void btnExit_connect_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void txtIPaddress_TextChanged(object sender, EventArgs e)
-        {
-            if(Connected == true) {
-                Visible = false;
-            } else {
-                Visible = true;
-            }
         }
     }
 }

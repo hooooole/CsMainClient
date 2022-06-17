@@ -91,24 +91,23 @@ namespace TcpClient
             connectFrom.ShowDialog();
 
 
-            if (connect.PassSerial != null)
-            {
-                if (connect.PassSerial.IsOpen)
-                {
+            if (connect.PassSerial != null) {
+                if (connect.PassSerial.IsOpen) {
                     comPort = connect.PassSerial;
                     PassSerial = comPort;
                     comPort.DataReceived += new SerialDataReceivedEventHandler(DataReceved);
+                    lblServer.Text = "On";
                 }
-
             }
+
             tcpConnect = connect.PassTCP;
             PassTCP = tcpConnect;
+
             if(tcpConnect == true)
             {
                 Writer = new StreamWriter(connect.PassClient.GetStream());
+                lblSerial.Text = "On";
             }
-
-
         }
 
         private void DataReceved(object sender, SerialDataReceivedEventArgs e)
@@ -138,6 +137,7 @@ namespace TcpClient
                 }
             }
         }
+
         private void SendToServer()
         {
             string msg = "@"+"nano," + dataTemp + "," + dataHumi;
@@ -168,29 +168,9 @@ namespace TcpClient
 
         }
 
-        private void lblConnectState_Click(object sender, EventArgs e)
+        private void groupBox4_Enter(object sender, EventArgs e)
         {
-            // on & off
-            if (lblConnectState.Text == "Off")
-            {
-                comPort = new SerialPort();
-                comPort.PortName = lblConnectState.Text;
-                comPort.BaudRate = Convert.ToInt32(lblConnectState.Text);
-                comPort.DataBits = 8;
-                comPort.Parity = Parity.None;
-                comPort.StopBits = StopBits.One;
-                comPort.Handshake = Handshake.None;
-                comPort.Open();
-                comPort.DiscardInBuffer();
-                PassSerial = comPort;
-                lblConnectState.Text = "On";
-            }
-            else
-            {
-                PassSerial = null;
-                comPort.Close();
-                lblConnectState.Text = "Off";
-            }
+
         }
     }
 }

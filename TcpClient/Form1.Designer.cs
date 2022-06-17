@@ -60,7 +60,10 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblConnectState = new System.Windows.Forms.Label();
+            this.lblServer = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblSerial = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.statusStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -71,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -124,7 +128,7 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(103, 60);
             this.lblTitle.TabIndex = 5;
-            this.lblTitle.Text = "Smart Dr.Farm";
+            this.lblTitle.Text = "Smart        Dr. Farm";
             // 
             // pictureBox4
             // 
@@ -322,8 +326,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.panel1.Controls.Add(this.lblConnectState);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.lblTitle2);
             this.panel1.Controls.Add(this.groupBox6);
             this.panel1.Controls.Add(this.groupBox5);
@@ -402,6 +405,7 @@
             this.groupBox4.Size = new System.Drawing.Size(146, 214);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // pictureBox1
             // 
@@ -417,22 +421,53 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(552, 462);
+            this.label1.Location = new System.Drawing.Point(9, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 23);
             this.label1.TabIndex = 10;
             this.label1.Text = "Server :";
             // 
-            // lblConnectState
+            // lblServer
             // 
-            this.lblConnectState.AutoSize = true;
-            this.lblConnectState.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConnectState.Location = new System.Drawing.Point(627, 463);
-            this.lblConnectState.Name = "lblConnectState";
-            this.lblConnectState.Size = new System.Drawing.Size(36, 23);
-            this.lblConnectState.TabIndex = 11;
-            this.lblConnectState.Text = "Off";
-            this.lblConnectState.Click += new System.EventHandler(this.lblConnectState_Click);
+            this.lblServer.AutoSize = true;
+            this.lblServer.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServer.Location = new System.Drawing.Point(92, 14);
+            this.lblServer.Name = "lblServer";
+            this.lblServer.Size = new System.Drawing.Size(36, 23);
+            this.lblServer.TabIndex = 11;
+            this.lblServer.Text = "Off";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(16, 41);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 23);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Serial :";
+            // 
+            // lblSerial
+            // 
+            this.lblSerial.AutoSize = true;
+            this.lblSerial.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSerial.Location = new System.Drawing.Point(92, 40);
+            this.lblSerial.Name = "lblSerial";
+            this.lblSerial.Size = new System.Drawing.Size(36, 23);
+            this.lblSerial.TabIndex = 13;
+            this.lblSerial.Text = "Off";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.LightYellow;
+            this.panel3.Controls.Add(this.lblSerial);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.lblServer);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Location = new System.Drawing.Point(535, 430);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(142, 78);
+            this.panel3.TabIndex = 14;
             // 
             // Form1
             // 
@@ -461,6 +496,8 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -497,8 +534,11 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label lblExit;
         private System.Windows.Forms.Label lblTitle2;
-        private System.Windows.Forms.Label lblConnectState;
+        private System.Windows.Forms.Label lblSerial;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblServer;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 

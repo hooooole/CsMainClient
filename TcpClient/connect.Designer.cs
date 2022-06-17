@@ -105,7 +105,6 @@
             // 
             resources.ApplyResources(this.txtIPaddress, "txtIPaddress");
             this.txtIPaddress.Name = "txtIPaddress";
-            this.txtIPaddress.TextChanged += new System.EventHandler(this.txtIPaddress_TextChanged);
             // 
             // txtUser
             // 
