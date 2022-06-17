@@ -70,6 +70,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TCP_Lib.cs" />
     <Compile Include="UsbCamera.cs" />
     <Compile Include="video.cs">
       <SubType>Form</SubType>

@@ -23,11 +23,7 @@ namespace TcpClient
         private bool Connected = false;
         public static bool PassTCP { get; set; }
 
-        public static System.Net.Sockets.TcpClient PassClient { get; set; }
-        
-
-        private NetworkStream stream;
-        private StreamReader Reader;
+        public static StreamWriter PassWriter { get; set; }
 
         private delegate void setTextDelegate(string getStrig);
 
@@ -46,12 +42,8 @@ namespace TcpClient
         private void connect_Load(object sender, EventArgs e)
         {
             Connected = Form1.PassTCP;
-            
-            /*
-            connect.StartPosition = FormStartPosition.Manual;
-            connect.Location = new Point(178, 108);
-            connect.Show();
-            */
+            comPort = Form1.PassSerial;
+
 
             cmbSerialPort.Items.Clear();
             var portName = System.IO.Ports.SerialPort.GetPortNames();
@@ -65,7 +57,6 @@ namespace TcpClient
             cmbBoardRate.Items.Add("115200");
             cmbBoardRate.SelectedIndex = 0;
             
-            //connect.Location = new Point();
 
             if (comPort != null)
             {
@@ -128,21 +119,17 @@ namespace TcpClient
                 if (Connected == false)
                 {
                     Client = new System.Net.Sockets.TcpClient();
-                    PassClient = Client;
                     Client.Connect(IPAddress.Parse(txtIPaddress.Text), LocalPort);
                     Connected = true;
                     PassTCP = Connected;
-                    stream = Client.GetStream();
-                    Reader = new StreamReader(stream);
-                    
+                    PassWriter = new StreamWriter(Client.GetStream());
                     btnTcpConnect.Text = "Close";
                 }
                 else
                 {
                     Connected = false;
-                    if (Reader != null) Reader.Close();
                     if (Client != null) Client.Close();
-
+                    if (PassWriter != null) PassWriter.Close();
                     btnTcpConnect.Text = "Connect";
                 }
             }

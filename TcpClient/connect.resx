@@ -159,7 +159,7 @@
     <value>6</value>
   </data>
   <data name="btnTcpConnect.Text" xml:space="preserve">
-    <value>Server</value>
+    <value>Connect</value>
   </data>
   <data name="&gt;&gt;btnTcpConnect.Name" xml:space="preserve">
     <value>btnTcpConnect</value>
@@ -513,7 +513,7 @@
     <value>11</value>
   </data>
   <data name="btnSerial.Text" xml:space="preserve">
-    <value>Client</value>
+    <value>Connect</value>
   </data>
   <data name="&gt;&gt;btnSerial.Name" xml:space="preserve">
     <value>btnSerial</value>

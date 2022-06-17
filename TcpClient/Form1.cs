@@ -12,15 +12,27 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using TCP_Lib;
 
 namespace TcpClient
 {
     public partial class Form1 : Form
     {
+        public static Form1 FormDialog;
+
+
+        /*TCP 서버
+         */
         private int LocalPort = 13000;
-        private IPAddress LocalAddress = IPAddress.Parse("192.168.0.20");
-        private string HostName = Dns.GetHostName();
+        private static string HostName = Dns.GetHostName();
+        private string strIPaddress = Dns.GetHostEntry(HostName).AddressList[1].ToString();
+        private TcpServer Server;
+
+
+
+        /*
+         * TCP 클라이언트
+         */
         private bool tcpConnect = false;
         public static bool PassTCP { get; set; }
 
@@ -45,14 +57,19 @@ namespace TcpClient
 
         private string dataTemp;
         private string dataHumi;
+        private string dataSoilHumi;
 
         public Form1()
         {
             InitializeComponent();
+            FormDialog = this;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            /*
+             * 
+             */
 
         }
 
@@ -91,6 +108,11 @@ namespace TcpClient
             connectFrom.ShowDialog();
 
 
+
+
+            /*
+             *  시리얼이 연결 됬을 때
+             */
             if (connect.PassSerial != null)
             {
                 if (connect.PassSerial.IsOpen)
@@ -98,16 +120,35 @@ namespace TcpClient
                     comPort = connect.PassSerial;
                     PassSerial = comPort;
                     comPort.DataReceived += new SerialDataReceivedEventHandler(DataReceved);
+                    lblSerial.Text = "On";
                 }
 
             }
-            tcpConnect = connect.PassTCP;
-            PassTCP = tcpConnect;
-            if(tcpConnect == true)
+            else
             {
-                Writer = new StreamWriter(connect.PassClient.GetStream());
+                lblSerial.Text = "Off";
             }
 
+
+            /**
+             *  TCP 연결 됬을 때
+             */
+
+            //Client = new System.Net.Sockets.TcpClient(); //
+            //Client.Connect(IPAddress.Parse("192.168.0.3"), 13000); //
+            //Writer = new StreamWriter(Client.GetStream()); //
+
+            tcpConnect = connect.PassTCP;
+
+            if(tcpConnect == true)
+            {
+                Writer = connect.PassWriter;
+                lblServer.Text = "On";
+            }
+            else
+            {
+                lblServer.Text = "Off";
+            }
 
         }
 
@@ -133,7 +174,6 @@ namespace TcpClient
 
                 if (tcpConnect)
                 {
-
                     SendToServer();
                 }
             }
@@ -168,29 +208,24 @@ namespace TcpClient
 
         }
 
-        private void lblConnectState_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            // on & off
-            if (lblConnectState.Text == "Off")
+
+        }
+
+        public void TCPmsgReceive(string msg)
+        {
+
+            /*
+                DB에 INSERT 하는 쿼리문
+             */
+            if (msg.Substring(0, 1) == "@")
             {
-                comPort = new SerialPort();
-                comPort.PortName = lblConnectState.Text;
-                comPort.BaudRate = Convert.ToInt32(lblConnectState.Text);
-                comPort.DataBits = 8;
-                comPort.Parity = Parity.None;
-                comPort.StopBits = StopBits.One;
-                comPort.Handshake = Handshake.None;
-                comPort.Open();
-                comPort.DiscardInBuffer();
-                PassSerial = comPort;
-                lblConnectState.Text = "On";
+                dataSoilHumi = msg.Substring
+                dataHumi = PasingData[1];
+                lblTmp.Text = dataTemp;
             }
-            else
-            {
-                PassSerial = null;
-                comPort.Close();
-                lblConnectState.Text = "Off";
-            }
+
         }
     }
 }
