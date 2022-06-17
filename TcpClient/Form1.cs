@@ -26,6 +26,9 @@ namespace TcpClient
         private int LocalPort = 13000;
         private static string HostName = Dns.GetHostName();
         private string strIPaddress = Dns.GetHostEntry(HostName).AddressList[1].ToString();
+
+
+
         private TcpServer Server;
 
 
@@ -68,8 +71,30 @@ namespace TcpClient
         private void Form1_Load(object sender, EventArgs e)
         {
             /*
-             * 
+             * 폼이 켜질 때 NodeMCU 서버 on
              */
+            IPHostEntry HostDNSEntry = System.Net.Dns.GetHostEntry(HostName);
+            IPAddress[] allIPsOfThisHost = null;
+            IPAddress ipv4Ret = null;
+            allIPsOfThisHost = HostDNSEntry.AddressList;
+
+            for (int idx = allIPsOfThisHost.Length - 1; idx > 0; idx--)
+            {
+                //if an IPV4 address is found, return the address
+                if (allIPsOfThisHost[idx].AddressFamily == AddressFamily.InterNetwork)
+                {
+                    ipv4Ret = allIPsOfThisHost[idx];
+                    break;
+                }
+            }
+            strIPaddress = ipv4Ret.ToString();
+
+
+
+            Server = new TcpServer(13000);
+            Server.IPaddress = strIPaddress;
+            Server.MaxConnections = 2;
+            Server.Start();
 
         }
 
