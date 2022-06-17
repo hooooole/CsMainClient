@@ -217,13 +217,12 @@ namespace TcpClient
         {
 
             /*
-                DB에 INSERT 하는 쿼리문
+                NODE MCU 에서 Tcp서버로 송신 되었을 때 
              */
             if (msg.Substring(0, 1) == "@")
             {
-                dataSoilHumi = msg.Substring
-                dataHumi = PasingData[1];
-                lblTmp.Text = dataTemp;
+                dataSoilHumi = msg.Substring(1);
+                lblSoil.Text = dataSoilHumi;
             }
 
         }
