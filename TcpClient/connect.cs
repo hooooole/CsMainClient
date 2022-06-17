@@ -70,15 +70,21 @@ namespace TcpClient
                 }
             }
 
+            txtUser.Text = Dns.GetHostName();
             if (Connected)
             {
                 btnTcpConnect.Text = "Close";
+                txtIPaddress.Enabled = false;
+                txtLocalPort.Enabled = false;
+
             }
             else
             {
                 btnTcpConnect.Text = "Connect";
             }
-        }
+
+            
+    }
 
         /*
          * 시리얼 포트 연결
@@ -123,6 +129,8 @@ namespace TcpClient
                     Connected = true;
                     PassTCP = Connected;
                     PassWriter = new StreamWriter(Client.GetStream());
+                    txtIPaddress.Enabled = false;
+                    txtLocalPort.Enabled = false;
                     btnTcpConnect.Text = "Close";
                 }
                 else

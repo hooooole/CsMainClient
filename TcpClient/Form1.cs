@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -89,12 +90,15 @@ namespace TcpClient
             }
             strIPaddress = ipv4Ret.ToString();
 
-
-
             Server = new TcpServer(13000);
             Server.IPaddress = strIPaddress;
             Server.MaxConnections = 2;
             Server.Start();
+            timer1.Enabled = true;
+            timer1.Start();
+            
+           
+
 
         }
 
@@ -159,20 +163,18 @@ namespace TcpClient
              *  TCP 연결 됬을 때
              */
 
-            //Client = new System.Net.Sockets.TcpClient(); //
-            //Client.Connect(IPAddress.Parse("192.168.0.3"), 13000); //
-            //Writer = new StreamWriter(Client.GetStream()); //
-
             tcpConnect = connect.PassTCP;
 
             if(tcpConnect == true)
             {
                 Writer = connect.PassWriter;
                 lblServer.Text = "On";
+                PassTCP = true;
             }
             else
             {
                 lblServer.Text = "Off";
+                PassTCP = false;
             }
 
         }
@@ -205,7 +207,7 @@ namespace TcpClient
         }
         private void SendToServer()
         {
-            string msg = "@"+"nano," + dataTemp + "," + dataHumi;
+            string msg = "@"+ dataTemp + "," + dataHumi + "," + dataSoilHumi;
             Writer.WriteLine(msg);
             Writer.Flush();
         }
@@ -244,10 +246,19 @@ namespace TcpClient
             /*
                 NODE MCU 에서 Tcp서버로 송신 되었을 때 
              */
-            if (msg.Substring(0, 1) == "@")
-            {
-                dataSoilHumi = msg.Substring(1);
+
+                dataSoilHumi = msg.Split(',')[2];
                 lblSoil.Text = dataSoilHumi;
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            ArrayList ClientStatus = Server.ClientStatus;
+            foreach (object obj in ClientStatus)
+            {
+                string status = obj.ToString();
+                textBox1.Text = status.Split(',')[0];
             }
 
         }
