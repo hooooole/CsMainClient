@@ -59,6 +59,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblConnectState = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -151,7 +153,7 @@
             // 
             this.lblDiagnostic.AutoSize = true;
             this.lblDiagnostic.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiagnostic.Location = new System.Drawing.Point(62, 211);
+            this.lblDiagnostic.Location = new System.Drawing.Point(66, 211);
             this.lblDiagnostic.Name = "lblDiagnostic";
             this.lblDiagnostic.Size = new System.Drawing.Size(86, 18);
             this.lblDiagnostic.TabIndex = 11;
@@ -161,7 +163,7 @@
             // 
             this.lblState.AutoSize = true;
             this.lblState.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblState.Location = new System.Drawing.Point(62, 167);
+            this.lblState.Location = new System.Drawing.Point(66, 167);
             this.lblState.Name = "lblState";
             this.lblState.Size = new System.Drawing.Size(44, 18);
             this.lblState.TabIndex = 10;
@@ -171,7 +173,7 @@
             // 
             this.lblConnect.AutoSize = true;
             this.lblConnect.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConnect.Location = new System.Drawing.Point(62, 122);
+            this.lblConnect.Location = new System.Drawing.Point(66, 122);
             this.lblConnect.Name = "lblConnect";
             this.lblConnect.Size = new System.Drawing.Size(72, 18);
             this.lblConnect.TabIndex = 9;
@@ -183,7 +185,7 @@
             this.btnDiagnostic.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDiagnostic.BackgroundImage")));
             this.btnDiagnostic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDiagnostic.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDiagnostic.Location = new System.Drawing.Point(12, 202);
+            this.btnDiagnostic.Location = new System.Drawing.Point(16, 202);
             this.btnDiagnostic.Name = "btnDiagnostic";
             this.btnDiagnostic.Size = new System.Drawing.Size(40, 36);
             this.btnDiagnostic.TabIndex = 2;
@@ -196,7 +198,7 @@
             this.btnState.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnState.BackgroundImage")));
             this.btnState.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnState.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnState.Location = new System.Drawing.Point(12, 158);
+            this.btnState.Location = new System.Drawing.Point(16, 158);
             this.btnState.Name = "btnState";
             this.btnState.Size = new System.Drawing.Size(40, 36);
             this.btnState.TabIndex = 1;
@@ -212,7 +214,7 @@
             this.btnConnect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnConnect.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConnect.Location = new System.Drawing.Point(12, 111);
+            this.btnConnect.Location = new System.Drawing.Point(16, 111);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(41, 36);
             this.btnConnect.TabIndex = 0;
@@ -320,6 +322,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.panel1.Controls.Add(this.lblConnectState);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lblTitle2);
             this.panel1.Controls.Add(this.groupBox6);
             this.panel1.Controls.Add(this.groupBox5);
@@ -409,6 +413,27 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(552, 462);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 23);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Server :";
+            // 
+            // lblConnectState
+            // 
+            this.lblConnectState.AutoSize = true;
+            this.lblConnectState.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConnectState.Location = new System.Drawing.Point(627, 463);
+            this.lblConnectState.Name = "lblConnectState";
+            this.lblConnectState.Size = new System.Drawing.Size(36, 23);
+            this.lblConnectState.TabIndex = 11;
+            this.lblConnectState.Text = "Off";
+            this.lblConnectState.Click += new System.EventHandler(this.lblConnectState_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -472,6 +497,8 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label lblExit;
         private System.Windows.Forms.Label lblTitle2;
+        private System.Windows.Forms.Label lblConnectState;
+        private System.Windows.Forms.Label label1;
     }
 }
 

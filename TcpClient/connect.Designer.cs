@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(connect));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnExit_connect = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnTcpConnect = new System.Windows.Forms.Button();
             this.txtLocalPort = new System.Windows.Forms.TextBox();
@@ -52,10 +53,20 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.panel3.Controls.Add(this.btnExit_connect);
             this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Controls.Add(this.groupBox3);
             resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
+            // 
+            // btnExit_connect
+            // 
+            this.btnExit_connect.BackColor = System.Drawing.Color.SeaGreen;
+            resources.ApplyResources(this.btnExit_connect, "btnExit_connect");
+            this.btnExit_connect.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnExit_connect.Name = "btnExit_connect";
+            this.btnExit_connect.UseVisualStyleBackColor = false;
+            this.btnExit_connect.Click += new System.EventHandler(this.btnExit_connect_Click);
             // 
             // groupBox1
             // 
@@ -94,6 +105,7 @@
             // 
             resources.ApplyResources(this.txtIPaddress, "txtIPaddress");
             this.txtIPaddress.Name = "txtIPaddress";
+            this.txtIPaddress.TextChanged += new System.EventHandler(this.txtIPaddress_TextChanged);
             // 
             // txtUser
             // 
@@ -193,5 +205,6 @@
         private System.Windows.Forms.Button btnSerial;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnExit_connect;
     }
 }

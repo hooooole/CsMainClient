@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace TcpClient
 {
-    public partial class connect : Form
+    public partial class connect : MetroFramework.Forms.MetroForm
     {
         private int LocalPort = 13000;
 
@@ -46,7 +46,12 @@ namespace TcpClient
         private void connect_Load(object sender, EventArgs e)
         {
             Connected = Form1.PassTCP;
-            comPort = Form1.PassSerial;
+            
+            /*
+            connect.StartPosition = FormStartPosition.Manual;
+            connect.Location = new Point(178, 108);
+            connect.Show();
+            */
 
             cmbSerialPort.Items.Clear();
             var portName = System.IO.Ports.SerialPort.GetPortNames();
@@ -82,7 +87,6 @@ namespace TcpClient
             {
                 btnTcpConnect.Text = "Connect";
             }
-
         }
 
         /*
@@ -151,6 +155,20 @@ namespace TcpClient
         private void connect_FormClosing(object sender, FormClosingEventArgs e)
         {
 
+        }
+
+        private void btnExit_connect_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtIPaddress_TextChanged(object sender, EventArgs e)
+        {
+            if(Connected == true) {
+                Visible = false;
+            } else {
+                Visible = true;
+            }
         }
     }
 }

@@ -18,7 +18,6 @@ namespace TcpClient
 {
     public partial class Form1 : Form
     {
-
         private int LocalPort = 13000;
         private IPAddress LocalAddress = IPAddress.Parse("192.168.0.20");
         private string HostName = Dns.GetHostName();
@@ -35,11 +34,11 @@ namespace TcpClient
 
         private delegate void setTextDelegate(string getStrig);
 
-
         /**
          * 시리얼 포트
          * 
          */
+
         SerialPort comPort = null;
         public static SerialPort PassSerial { get; set; }
 
@@ -52,12 +51,8 @@ namespace TcpClient
             InitializeComponent();
         }
 
-        
-
-
         private void Form1_Load(object sender, EventArgs e)
         {
-
 
         }
 
@@ -65,7 +60,6 @@ namespace TcpClient
         {
             Connected = false;
             if (Writer != null) Writer.Close();
-
         }
 
 
@@ -87,6 +81,7 @@ namespace TcpClient
         /**
          * 시리얼포트 , TCP 통신 연결 버튼
          */
+
         private void btnConnect_Click(object sender, EventArgs e)
         {
             Form connectFrom = new connect();
@@ -145,7 +140,7 @@ namespace TcpClient
         }
         private void SendToServer()
         {
-            string msg = "@" + dataTemp + "," + dataHumi;
+            string msg = "@"+"nano," + dataTemp + "," + dataHumi;
             Writer.WriteLine(msg);
             Writer.Flush();
         }
@@ -156,12 +151,11 @@ namespace TcpClient
             videoform.Location = new Point(700, 180);
             videoform.BringToFront();
             videoform.ShowDialog();
-            // Check state of plant
         }
 
         private void btnDiagnostic_Click(object sender, EventArgs e)
         {
-            // Diagnost plant disease
+            // After Complete to Deep Learning
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -172,6 +166,31 @@ namespace TcpClient
         private void lblTmp_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblConnectState_Click(object sender, EventArgs e)
+        {
+            // on & off
+            if (lblConnectState.Text == "Off")
+            {
+                comPort = new SerialPort();
+                comPort.PortName = lblConnectState.Text;
+                comPort.BaudRate = Convert.ToInt32(lblConnectState.Text);
+                comPort.DataBits = 8;
+                comPort.Parity = Parity.None;
+                comPort.StopBits = StopBits.One;
+                comPort.Handshake = Handshake.None;
+                comPort.Open();
+                comPort.DiscardInBuffer();
+                PassSerial = comPort;
+                lblConnectState.Text = "On";
+            }
+            else
+            {
+                PassSerial = null;
+                comPort.Close();
+                lblConnectState.Text = "Off";
+            }
         }
     }
 }
