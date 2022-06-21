@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.IO.Ports;
@@ -204,7 +205,28 @@ namespace TcpClient
 
         private void btnDiagnostic_Click(object sender, EventArgs e)
         {
-            
+            comPort.Write("100");
+
+            string bat = @"C:\Users\User\test.bat";
+            var psi = new ProcessStartInfo();
+            psi.CreateNoWindow = true;
+            psi.FileName = @"cmd.exe";
+            psi.Verb = "runas";
+            psi.Arguments = "/C " + bat;
+
+            try
+            {
+                var process = new Process();
+                process.StartInfo = psi;
+                process.Start();
+                process.WaitForExit();
+            }
+            catch (Exception)
+            {
+
+                Console.WriteLine("exception ocurred.");
+            }
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
