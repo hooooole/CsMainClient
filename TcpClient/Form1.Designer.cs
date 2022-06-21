@@ -51,10 +51,12 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.lblSerial = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblServer = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
             this.lblTitle2 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -63,18 +65,16 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblDate = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -166,6 +166,7 @@
             this.lblConnect.Size = new System.Drawing.Size(89, 23);
             this.lblConnect.TabIndex = 9;
             this.lblConnect.Text = "Connect";
+            this.lblConnect.Click += new System.EventHandler(this.lblConnect_Click);
             // 
             // btnDiagnostic
             // 
@@ -325,6 +326,18 @@
             this.panel1.Size = new System.Drawing.Size(713, 548);
             this.panel1.TabIndex = 8;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.panel3.Controls.Add(this.lblSerial);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.lblServer);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Location = new System.Drawing.Point(545, 434);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(132, 74);
+            this.panel3.TabIndex = 16;
+            // 
             // lblSerial
             // 
             this.lblSerial.AutoSize = true;
@@ -365,6 +378,16 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Server :";
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(24, 25);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(114, 23);
+            this.lblDate.TabIndex = 14;
+            this.lblDate.Text = "2022-01-01";
             // 
             // lblTitle2
             // 
@@ -450,28 +473,6 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(24, 25);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(114, 23);
-            this.lblDate.TabIndex = 14;
-            this.lblDate.Text = "2022-01-01";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.panel3.Controls.Add(this.lblSerial);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.lblServer);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(545, 434);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(132, 74);
-            this.panel3.TabIndex = 16;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -487,6 +488,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -496,8 +499,6 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }

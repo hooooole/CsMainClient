@@ -56,11 +56,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bacterialspot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bacterialspot.Designer.cs">
+      <DependentUpon>Bacterialspot.cs</DependentUpon>
+    </Compile>
     <Compile Include="connect.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="connect.Designer.cs">
       <DependentUpon>connect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EarlyBlight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EarlyBlight.Designer.cs">
+      <DependentUpon>EarlyBlight.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -68,9 +80,45 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Info.Designer.cs">
+      <DependentUpon>Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Info2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Info2.Designer.cs">
+      <DependentUpon>Info2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mold.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mold.Designer.cs">
+      <DependentUpon>Mold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mosaic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mosaic.Designer.cs">
+      <DependentUpon>Mosaic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Septoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Septoria.Designer.cs">
+      <DependentUpon>Septoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="TCP_Lib.cs" />
+    <Compile Include="Twospotted.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Twospotted.Designer.cs">
+      <DependentUpon>Twospotted.cs</DependentUpon>
+    </Compile>
     <Compile Include="UsbCamera.cs" />
     <Compile Include="video.cs">
       <SubType>Form</SubType>
@@ -78,11 +126,35 @@
     <Compile Include="video.Designer.cs">
       <DependentUpon>video.cs</DependentUpon>
     </Compile>
+    <Compile Include="Yellow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yellow.Designer.cs">
+      <DependentUpon>Yellow.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Bacterialspot.resx">
+      <DependentUpon>Bacterialspot.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="connect.resx">
       <DependentUpon>connect.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EarlyBlight.resx">
+      <DependentUpon>EarlyBlight.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Info.resx">
+      <DependentUpon>Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Info2.resx">
+      <DependentUpon>Info2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mold.resx">
+      <DependentUpon>Mold.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mosaic.resx">
+      <DependentUpon>Mosaic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -93,8 +165,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Septoria.resx">
+      <DependentUpon>Septoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Twospotted.resx">
+      <DependentUpon>Twospotted.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="video.resx">
       <DependentUpon>video.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yellow.resx">
+      <DependentUpon>Yellow.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

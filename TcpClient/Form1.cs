@@ -223,7 +223,6 @@ namespace TcpClient
             }
             catch (Exception)
             {
-
                 Console.WriteLine("exception ocurred.");
             }
 
@@ -267,6 +266,11 @@ namespace TcpClient
                 textBox1.Text = status.Split(',')[0];
             }
             */
+        }
+
+        private void lblConnect_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
