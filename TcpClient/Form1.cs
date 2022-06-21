@@ -59,6 +59,11 @@ namespace TcpClient
         private string dataHumi;
         private string dataSoilHumi;
 
+        /*
+        * 진단 결과 Hash Table
+        */
+        Hashtable results = new Hashtable();
+
         public Form1()
         {
             InitializeComponent();
@@ -203,10 +208,14 @@ namespace TcpClient
             videoform.ShowDialog();
         }
 
+        /**
+         *  !!! 실행되는 PC에서 경로 설정 해주어야 함 !!!
+         */
         private void btnDiagnostic_Click(object sender, EventArgs e)
         {
             comPort.Write("100");
 
+            //경로 설정
             string bat = @"C:\Users\User\test.bat";
             var psi = new ProcessStartInfo();
             psi.CreateNoWindow = true;
@@ -223,8 +232,51 @@ namespace TcpClient
             }
             catch (Exception)
             {
+
                 Console.WriteLine("exception ocurred.");
             }
+
+
+            //경로 설정
+            string dirPath = @"C:\Project\deeplearning\yolov5\yolov5\results";
+            string dirName = "";
+            if (Directory.Exists(dirPath))
+            {
+                DirectoryInfo di = new DirectoryInfo(dirPath);
+                foreach (var item in di.GetDirectories())
+                {
+                    dirName = item.Name;
+                    Console.WriteLine(dirName);
+                }
+
+            }
+            Console.WriteLine(dirName);
+            string path = dirPath + @"\" + dirName;
+            Console.WriteLine(path);
+            string[] files = Directory.GetFiles(path);
+            foreach (string file in files)
+            {
+                Console.WriteLine(file);
+                string[] parsed = file.Split('_')[0].Split('\\');
+                if (!results.ContainsKey(parsed[parsed.Length - 1]))
+                {
+                    results.Add(parsed[parsed.Length-1], true);
+                }
+            }
+            foreach (DictionaryEntry de in results)
+            {
+                Console.WriteLine("Key = {0}, Value = {1}", de.Key, de.Value);
+            }
+            ShowResult.PassHash = results;
+
+
+            Form resultForm = new ShowResult();
+            resultForm.StartPosition = FormStartPosition.Manual;
+            resultForm.Location = new Point(700, 180);
+            resultForm.BringToFront();
+            resultForm.ShowDialog();
+
+
 
         }
 

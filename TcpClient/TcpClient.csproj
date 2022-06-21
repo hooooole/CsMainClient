@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{36CDAC79-654B-4A39-B6C9-855080EBCDFD}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>TcpClient</RootNamespace>
     <AssemblyName>TcpClient</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -31,6 +31,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
@@ -112,6 +115,12 @@
     <Compile Include="Septoria.Designer.cs">
       <DependentUpon>Septoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShowResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowResult.Designer.cs">
+      <DependentUpon>ShowResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="TCP_Lib.cs" />
     <Compile Include="Twospotted.cs">
       <SubType>Form</SubType>
@@ -167,6 +176,9 @@
     </Compile>
     <EmbeddedResource Include="Septoria.resx">
       <DependentUpon>Septoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowResult.resx">
+      <DependentUpon>ShowResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Twospotted.resx">
       <DependentUpon>Twospotted.cs</DependentUpon>
