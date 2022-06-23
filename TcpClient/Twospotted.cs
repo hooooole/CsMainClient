@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace TcpClient
 {
-    public partial class Twospotted : Form
+    public partial class Twospotted : MetroFramework.Forms.MetroForm
     {
         public Twospotted()
         {
@@ -20,6 +20,11 @@ namespace TcpClient
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Twospotted_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

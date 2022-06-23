@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace TcpClient
 {
-    public partial class EarlyBlight : Form
+    public partial class EarlyBlight : MetroFramework.Forms.MetroForm
     {
         public EarlyBlight()
         {
@@ -23,6 +23,11 @@ namespace TcpClient
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EarlyBlight_Load(object sender, EventArgs e)
         {
 
         }

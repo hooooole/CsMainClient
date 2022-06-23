@@ -2465,7 +2465,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 135</value>
+    <value>8, 144</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 17</value>
@@ -2498,7 +2498,7 @@
     <value>NoControl</value>
   </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 159</value>
+    <value>7, 168</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>234, 17</value>
@@ -2531,7 +2531,7 @@
     <value>NoControl</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 57</value>
+    <value>8, 61</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 17</value>
@@ -2564,7 +2564,7 @@
     <value>NoControl</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 236</value>
+    <value>12, 251</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 17</value>
@@ -2597,7 +2597,7 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 212</value>
+    <value>3, 227</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>229, 17</value>
@@ -2630,7 +2630,7 @@
     <value>NoControl</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 189</value>
+    <value>9, 204</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 17</value>
@@ -2663,7 +2663,7 @@
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 110</value>
+    <value>0, 119</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 17</value>
@@ -2696,7 +2696,7 @@
     <value>NoControl</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 86</value>
+    <value>8, 95</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 17</value>
@@ -2729,7 +2729,7 @@
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 34</value>
+    <value>7, 38</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 17</value>
@@ -2762,7 +2762,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 11</value>
+    <value>8, 15</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 17</value>
@@ -2789,7 +2789,7 @@
     <value>271, 31</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 272</value>
+    <value>238, 293</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -2816,7 +2816,7 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 273</value>
+    <value>26, 279</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>218, 17</value>
@@ -2849,7 +2849,7 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>53, 249</value>
+    <value>53, 255</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>159, 21</value>
@@ -2900,7 +2900,7 @@
     <value>NoControl</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>395, 309</value>
+    <value>399, 340</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 34</value>
@@ -2909,7 +2909,7 @@
     <value>13</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
-    <value>Go to Main</value>
+    <value>Back</value>
   </data>
   <data name="&gt;&gt;button1.Name" xml:space="preserve">
     <value>button1</value>
@@ -2927,7 +2927,7 @@
     <value>-1, -12</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>517, 364</value>
+    <value>517, 476</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -2951,7 +2951,7 @@
     <value>7, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>514, 341</value>
+    <value>514, 460</value>
   </data>
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>700, 260</value>
@@ -2963,6 +2963,6 @@
     <value>Twospotted</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
 </root>

@@ -65,6 +65,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel1.SuspendLayout();
@@ -166,7 +167,6 @@
             this.lblConnect.Size = new System.Drawing.Size(89, 23);
             this.lblConnect.TabIndex = 9;
             this.lblConnect.Text = "Connect";
-            this.lblConnect.Click += new System.EventHandler(this.lblConnect_Click);
             // 
             // btnDiagnostic
             // 
@@ -242,7 +242,6 @@
             this.lblTmp.TabIndex = 3;
             this.lblTmp.Text = "--";
             this.lblTmp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblTmp.Click += new System.EventHandler(this.lblTmp_Click);
             // 
             // lblHmd
             // 
@@ -277,7 +276,6 @@
             this.lblSoil.TabIndex = 6;
             this.lblSoil.Text = "    --";
             this.lblSoil.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblSoil.Click += new System.EventHandler(this.label7_Click);
             // 
             // label10
             // 
@@ -288,7 +286,6 @@
             this.label10.Size = new System.Drawing.Size(34, 18);
             this.label10.TabIndex = 7;
             this.label10.Text = "(℃)";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
             // 
@@ -323,7 +320,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(0, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(713, 548);
+            this.panel1.Size = new System.Drawing.Size(724, 548);
             this.panel1.TabIndex = 8;
             // 
             // panel3
@@ -470,14 +467,21 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 1000;
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 60000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(711, 544);
+            this.ClientSize = new System.Drawing.Size(720, 544);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -539,6 +543,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace TcpClient
 {
-    public partial class Mosaic : Form
+    public partial class Mosaic : MetroFramework.Forms.MetroForm
     {
         public Mosaic()
         {
@@ -25,6 +25,11 @@ namespace TcpClient
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Mosaic_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -108,20 +108,11 @@ namespace TcpClient
         }
 
 
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label12_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
 
         /**
          * 시리얼포트 , TCP 통신 연결 버튼
@@ -176,20 +167,10 @@ namespace TcpClient
 
         private void SerailReceved(string inString)
         {
-            string Head = inString.Substring(0, 1);
-            string Data = inString.Substring(1);
-
-            if (Head == "@") {
-                string[] PasingData = Data.Split(',');
-                dataTemp = PasingData[0];
-                dataHumi = PasingData[1];
-                lblTmp.Text = dataTemp;
-                lblHmd.Text = dataHumi;
-
-                if (tcpConnect) {
-                    SendToServer();
-                }
-            }
+            /*
+             * 시리얼 송신 부
+             */
+            
         }
 
         private void SendToServer()
@@ -213,7 +194,15 @@ namespace TcpClient
          */
         private void btnDiagnostic_Click(object sender, EventArgs e)
         {
-            comPort.Write("100");
+            try
+            {
+                comPort.Write("1000");
+            }
+            catch (Exception ex)
+            {
+
+            }
+            
 
             //경로 설정
             string bat = @"C:\Users\User\test.bat";
@@ -285,10 +274,7 @@ namespace TcpClient
             this.Close();
         }
 
-        private void lblTmp_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -301,28 +287,44 @@ namespace TcpClient
             /*
                 NODE MCU 에서 Tcp서버로 송신 되었을 때 
              */
+            string Head = msg.Substring(0, 1);
+            string Data = msg.Substring(1);
 
-                dataSoilHumi = msg.Split(',')[2];
+            if (Head == "@")
+            {
+                string[] PasingData = Data.Split(',');
+                dataTemp = PasingData[0];
+                dataHumi = PasingData[1];
+                dataSoilHumi = PasingData[2];
+                lblTmp.Text = dataTemp;
+                lblHmd.Text = dataHumi;
                 lblSoil.Text = dataSoilHumi;
 
+            }
         }
-
+        /**
+         * 서버 PC로 센서 값 송신
+         */
         private void timer1_Tick(object sender, EventArgs e)
         {
-            /* SoilHmd Test
-             
-            ArrayList ClientStatus = Server.ClientStatus;
-            foreach (object obj in ClientStatus)
+            if (tcpConnect)
             {
-                string status = obj.ToString();
-                textBox1.Text = status.Split(',')[0];
+                SendToServer();
             }
-            */
         }
-
-        private void lblConnect_Click(object sender, EventArgs e)
+        /**
+         * 아두이노로 토양습도 송신
+         */
+        private void timer2_Tick(object sender, EventArgs e)
         {
+            try
+            {
+                comPort.Write("20");
+            }
+            catch (Exception ex)
+            {
 
+            }
         }
     }
 }

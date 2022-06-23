@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace TcpClient
 {
-    public partial class Septoria : Form
+    public partial class Septoria : MetroFramework.Forms.MetroForm
     {
         public Septoria()
         {
@@ -20,6 +20,11 @@ namespace TcpClient
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Septoria_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

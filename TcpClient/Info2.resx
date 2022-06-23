@@ -122,7 +122,7 @@
     <value>Century Gothic, 12pt, style=Bold</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>395, 309</value>
+    <value>395, 336</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 34</value>
@@ -132,7 +132,7 @@
     <value>13</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
-    <value>Go to Main</value>
+    <value>Back</value>
   </data>
   <data name="&gt;&gt;button1.Name" xml:space="preserve">
     <value>button1</value>
@@ -174,7 +174,7 @@
     <value>나눔고딕 ExtraBold, 12pt, style=Bold</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 280</value>
+    <value>82, 287</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 19</value>
@@ -204,7 +204,7 @@
     <value>나눔고딕, 14.2499981pt, style=Bold</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 253</value>
+    <value>62, 260</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 21</value>
@@ -1505,7 +1505,7 @@
     <value>나눔고딕, 11.25pt, style=Bold</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 228</value>
+    <value>23, 241</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>178, 17</value>
@@ -1535,7 +1535,7 @@
     <value>나눔고딕, 11.25pt, style=Bold</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 205</value>
+    <value>24, 218</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 17</value>
@@ -1565,7 +1565,7 @@
     <value>나눔고딕, 11.25pt, style=Bold</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 182</value>
+    <value>15, 195</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 17</value>
@@ -1595,7 +1595,7 @@
     <value>나눔고딕, 11.25pt, style=Bold</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 160</value>
+    <value>9, 173</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 17</value>
@@ -1742,7 +1742,7 @@
     <value>271, 31</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 272</value>
+    <value>234, 290</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1763,7 +1763,7 @@
     <value>-1, -12</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>517, 364</value>
+    <value>517, 474</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1787,7 +1787,7 @@
     <value>7, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>514, 341</value>
+    <value>514, 460</value>
   </data>
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>700, 260</value>
@@ -1799,6 +1799,6 @@
     <value>Info2</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
 </root>

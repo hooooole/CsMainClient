@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace TcpClient
 {
-    public partial class ShowResult : Form
+    public partial class ShowResult : MetroFramework.Forms.MetroForm
     {
         public static Hashtable PassHash { get; set; }
 
@@ -40,53 +40,81 @@ namespace TcpClient
 
         }
 
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox9_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_Click(object sender, EventArgs e)
+        private void textBox1_Click_1(object sender, EventArgs e)
         {
             Form resultForm = new EarlyBlight();
+            resultForm.StartPosition = FormStartPosition.Manual;
+            resultForm.Location = new Point(700, 190);
+            resultForm.BringToFront();
+            resultForm.ShowDialog();
+        }
+
+        private void textBox4_Click(object sender, EventArgs e)
+        {
+            Form resultForm = new Info2();
             resultForm.StartPosition = FormStartPosition.Manual;
             resultForm.Location = new Point(700, 180);
             resultForm.BringToFront();
             resultForm.ShowDialog();
+        }
+
+        private void textBox2_Click(object sender, EventArgs e)
+        {
+            Form resultForm = new Septoria();
+            resultForm.StartPosition = FormStartPosition.Manual;
+            resultForm.Location = new Point(700, 180);
+            resultForm.BringToFront();
+            resultForm.ShowDialog();
+        }
+
+        private void textBox3_Click(object sender, EventArgs e)
+        {
+            Form resultForm = new Bacterialspot();
+            resultForm.StartPosition = FormStartPosition.Manual;
+            resultForm.Location = new Point(700, 180);
+            resultForm.BringToFront();
+            resultForm.ShowDialog();
+        }
+
+        private void textBox5_Click(object sender, EventArgs e)
+        {
+            Form resultForm = new Mosaic();
+            resultForm.StartPosition = FormStartPosition.Manual;
+            resultForm.Location = new Point(700, 180);
+            resultForm.BringToFront();
+            resultForm.ShowDialog();
+        }
+
+        private void textBox6_Click(object sender, EventArgs e)
+        {
+            Form resultForm = new Yellow();
+            resultForm.StartPosition = FormStartPosition.Manual;
+            resultForm.Location = new Point(700, 180);
+            resultForm.BringToFront();
+            resultForm.ShowDialog();
+        }
+
+        private void textBox7_Click(object sender, EventArgs e)
+        {
+            Form resultForm = new Mold();
+            resultForm.StartPosition = FormStartPosition.Manual;
+            resultForm.Location = new Point(700, 180);
+            resultForm.BringToFront();
+            resultForm.ShowDialog();
+        }
+
+        private void textBox8_Click(object sender, EventArgs e)
+        {
+            Form resultForm = new Twospotted();
+            resultForm.StartPosition = FormStartPosition.Manual;
+            resultForm.Location = new Point(700, 180);
+            resultForm.BringToFront();
+            resultForm.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

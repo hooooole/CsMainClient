@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace TcpClient
 {
-    public partial class Mold : Form
+    public partial class Mold : MetroFramework.Forms.MetroForm
     {
         public Mold()
         {
@@ -20,6 +20,11 @@ namespace TcpClient
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Mold_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

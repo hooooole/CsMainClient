@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace TcpClient
 {
-    public partial class Bacterialspot : Form
+    public partial class Bacterialspot : MetroFramework.Forms.MetroForm
     {
         public Bacterialspot()
         {
@@ -20,6 +20,16 @@ namespace TcpClient
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Bacterialspot_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

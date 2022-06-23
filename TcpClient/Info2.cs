@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace TcpClient
 {
-    public partial class Info2 : Form
+    public partial class Info2 : MetroFramework.Forms.MetroForm
     {
         public Info2()
         {
@@ -20,6 +20,11 @@ namespace TcpClient
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Info2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
