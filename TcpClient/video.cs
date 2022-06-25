@@ -22,7 +22,7 @@ namespace TcpClient
             if (devices.Length == 0) return; // no camera.
 
             // check format.
-            int cameraIndex = 0;
+            int cameraIndex = 1;
             UsbCamera.VideoFormat[] formats = UsbCamera.GetVideoFormat(cameraIndex);
             for (int i = 0; i < formats.Length; i++) Console.WriteLine("{0}:{1}", i, formats[i]);
 

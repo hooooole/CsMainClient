@@ -16,7 +16,7 @@ namespace TcpClient
         public static Hashtable PassHash { get; set; }
 
         private Dictionary<string, int> diseaseNum = new Dictionary<string, int>();
-        string[] disease = { "Early blight", "Septoria leaf", "Healthy leaf", "Bacterial spot", 
+        string[] disease = { "Early blight", "Septoria leaf",  "Bacterial spot", 
             "Late blight", "Mosaic virus", "Yellow virus", "Tomato mold leaf", "Tomato two spotted spider mites leaf" };
         public ShowResult()
         {

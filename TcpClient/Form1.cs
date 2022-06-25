@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -70,6 +71,22 @@ namespace TcpClient
             FormDialog = this;
         }
 
+        /*
+         * DB 객체
+         */
+        MySqlConnection connection = new MySqlConnection(
+                "Server=192.168.0.3;" +
+                "Port=3306;" +
+                "Database=smartfarm;" +
+                "Uid=admin;" +
+                "Pwd=123456789");
+        private Dictionary<string, int> diseaseNum = new Dictionary<string, int>();
+        string[] disease = { "Early blight", "Septoria leaf",  "Bacterial spot",
+            "Late blight", "Mosaic virus", "Yellow virus", "Tomato mold leaf", "Tomato two spotted spider mites leaf" };
+        short[] dbUpdate = { 0, 0, 0, 0, 0, 0, 0, 0 };
+
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
             /*
@@ -98,7 +115,10 @@ namespace TcpClient
             Server.MaxConnections = 2;
             Server.Start();
             timer1.Enabled = true;
-            timer1.Start();
+            timer1.Stop();
+
+            for (int i = 0; i < disease.Length; i++)
+                diseaseNum.Add(disease[i], i);
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -252,10 +272,31 @@ namespace TcpClient
                     results.Add(parsed[parsed.Length-1], true);
                 }
             }
+            MySqlCommand command = connection.CreateCommand();
+            string valueStr = "";
             foreach (DictionaryEntry de in results)
             {
-                Console.WriteLine("Key = {0}, Value = {1}", de.Key, de.Value);
+                dbUpdate[diseaseNum[(string)de.Key]] = 1;
             }
+            foreach (short value in dbUpdate)
+            {
+                valueStr += value.ToString();
+                valueStr += ",";
+            }
+            //command.CommandText = "INSERT INTO Env(time, temp, humi, soil_humi) VALUES(now(), @temp, @humi, @soil_humi)";
+            string query = "INSERT INTO disease VALUES(now()," + valueStr.Substring(0, valueStr.Length - 1) + ")";
+            Console.WriteLine(query);
+            command.CommandText = query;
+
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex) { 
+                Console.WriteLine(ex.ToString());
+            }
+
+
             ShowResult.PassHash = results;
 
 
@@ -287,30 +328,55 @@ namespace TcpClient
             /*
                 NODE MCU 에서 Tcp서버로 송신 되었을 때 
              */
+
             string Head = msg.Substring(0, 1);
             string Data = msg.Substring(1);
 
+            string[] PasingData = Data.Split(',');
+            dataTemp = PasingData[0];
+            dataHumi = PasingData[1];
+            dataSoilHumi = PasingData[2];
+            lblTmp.Text = dataTemp;
+            lblHmd.Text = dataHumi;
+            lblSoil.Text = dataSoilHumi;
+            /*
             if (Head == "@")
             {
-                string[] PasingData = Data.Split(',');
-                dataTemp = PasingData[0];
-                dataHumi = PasingData[1];
-                dataSoilHumi = PasingData[2];
+                string[] PasingData = msg.Split(',');
+                dataTemp = PasingData[1].Substring(1);
+                dataHumi = PasingData[2];
+                dataSoilHumi = PasingData[3];
                 lblTmp.Text = dataTemp;
                 lblHmd.Text = dataHumi;
                 lblSoil.Text = dataSoilHumi;
 
-            }
+            }*/
+
+
+
         }
         /**
-         * 서버 PC로 센서 값 송신
+         * DB 값 업데이트
          */
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (tcpConnect)
+            
+            MySqlCommand command = connection.CreateCommand();
+
+            command.CommandText = "INSERT INTO Env(time, temp, humi, soil_humi) VALUES(now(), @temp, @humi, @soil_humi)";
+            command.Parameters.Add("@temp", MySqlDbType.VarChar).Value = dataTemp;
+            command.Parameters.Add("@humi", MySqlDbType.VarChar).Value = dataHumi;
+            command.Parameters.Add("@soil_humi", MySqlDbType.VarChar).Value = dataSoilHumi;
+
+            try
             {
-                SendToServer();
+                command.ExecuteNonQuery();
+                Console.WriteLine(command.ToString());
             }
+            catch(Exception ex) {
+                Console.WriteLine(ex.ToString());
+            }
+
         }
         /**
          * 아두이노로 토양습도 송신
@@ -319,12 +385,47 @@ namespace TcpClient
         {
             try
             {
-                comPort.Write("20");
+                comPort.Write(dataSoilHumi);
             }
             catch (Exception ex)
             {
 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            /**
+         *  MySQL 연결 객체
+         */
+
+            try
+            {
+                connection.Open();
+                button1.Visible = false;
+                button1.Text = "opened";
+                timer1.Start();
+            }
+            catch (MySqlException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 0:
+                        MessageBox.Show("Cannot conact MySQL Server", "mySQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    case 1045:
+                        MessageBox.Show("Invalid username/password, please try again", "mySQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    default:
+                        MessageBox.Show(ex.ToString(), "mySQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                }
+            }
+        }
+
+        private void lblSoil_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

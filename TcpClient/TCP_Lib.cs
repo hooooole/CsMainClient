@@ -203,7 +203,8 @@ namespace TCP_Lib
                                 if (_receivedStr.IndexOf("\n") >= 0)
                                 {
                                     //-----------------------------------------------------------------------
-                                    string rxmsg = DateTime.Now.ToString("HH:mm:ss") + "," + _receivedStr;
+                                    //string rxmsg = DateTime.Now.ToString("HH:mm:ss") + "," + _receivedStr;
+                                    string rxmsg = _receivedStr;
                                     Form1.FormDialog.BeginInvoke(new SetTextDelegate(Form1.FormDialog.TCPmsgReceive), new object[] { rxmsg });
                                     
                                     state.Write(Encoding.UTF8.GetBytes(_receivedStr), 0, _receivedStr.Length);
